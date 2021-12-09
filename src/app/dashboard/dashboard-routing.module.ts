@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../shared/auth.guard';
 import { DashboardIndexComponent } from './dashboard-index/dashboard-index.component';
 import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.component';
 import { DashboardOrderComponent } from './dashboard-order/dashboard-order.component';
@@ -10,7 +11,8 @@ const DashboardChildrenRoute: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: DashboardIndexComponent
+    component: DashboardIndexComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'saved-items',
@@ -18,7 +20,8 @@ const DashboardChildrenRoute: Routes = [
   },
   {
     path: 'profile',
-    component: DashboardProfileComponent
+    component: DashboardProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'orders',

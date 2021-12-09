@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
-  selector: 'll-dashboard-layout',
-  templateUrl: './dashboard-layout.component.html',
-  styleUrls: ['./dashboard-layout.component.scss']
+  selector: 'app-admin-panel-layout',
+  templateUrl: './admin-panel-layout.component.html',
+  styleUrls: ['./admin-panel-layout.component.scss']
 })
-export class DashboardLayoutComponent implements OnInit {
-  isLessThenLargeDevice;
+export class AdminPanelLayoutComponent implements OnInit {
 
-  constructor(private auth:AuthService,private breakpointObserver: BreakpointObserver, private router: Router) {}
+  isLessThenLargeDevice;
+  constructor(private auth:AuthService,private breakpointObserver: BreakpointObserver, private router: Router) { }
 
   ngOnInit(): void {
     this.breakpointObserver.observe(['(max-width: 1199px)']).subscribe(({ matches }) => {
@@ -22,4 +22,5 @@ export class DashboardLayoutComponent implements OnInit {
     this.auth.logout();
     this.router.navigate(['auth/login']);
   }
+
 }

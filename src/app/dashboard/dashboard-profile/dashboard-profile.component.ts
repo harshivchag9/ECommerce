@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'll-dashboard-profile',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardProfileComponent implements OnInit {
 
-  constructor() { }
+  public user:any;
+  constructor(private dashboardService:DashboardService) { }
 
   ngOnInit(): void {
+    this.dashboardService.fetchUserData().subscribe(data=>{
+      this.user = data['0'];
+    });
   }
 
 }
