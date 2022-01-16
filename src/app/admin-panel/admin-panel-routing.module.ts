@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminPanelLayoutComponent,
-    children: AdminPanelChildrenRoute
+    children: AdminPanelChildrenRoute 
   }
 ];
 

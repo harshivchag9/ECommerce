@@ -17,10 +17,9 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   imports: [
     CommonModule,
-    AdminPanelRoutingModule,
-    CommonModule,
-    SharedModule, 
-    MatMenuModule
+    AdminPanelRoutingModule, 
+    MatMenuModule,
+    SharedModule
   ]
 })
 export class AdminPanelModule { }

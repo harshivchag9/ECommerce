@@ -23,6 +23,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  
   public ConfirmPasswordValidator(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
       let control = formGroup.controls[controlName];
@@ -40,6 +41,7 @@ export class SignupComponent implements OnInit {
       }
     };
   }
+
   public RegisterUser(){
     if (this.UserRegisterFormGroup.valid ) {
       let data = {

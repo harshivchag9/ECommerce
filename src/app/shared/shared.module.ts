@@ -15,6 +15,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotificationComponent } from './components/notification/notification.component';
 
 const commonModules = [
   HttpClientModule,
@@ -28,8 +29,8 @@ const commonModules = [
 ];
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, FeatureComponent, BaseLayoutComponent, LoaderComponent, SidenavComponent],
+  declarations: [HeaderComponent, FooterComponent, FeatureComponent, BaseLayoutComponent, LoaderComponent, SidenavComponent, NotificationComponent],
   imports: [CommonModule, RouterModule, ...commonModules],
-  exports: [HeaderComponent, FooterComponent, BaseLayoutComponent, FeatureComponent, LoaderComponent, SidenavComponent, ...commonModules]
+  exports: [HeaderComponent, FooterComponent, BaseLayoutComponent, FeatureComponent, NotificationComponent, LoaderComponent, SidenavComponent, ...commonModules]
 })
 export class SharedModule {}
